@@ -243,7 +243,7 @@ DROP TABLE IF EXISTS `member_info`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `member_info` (
   `member_no` int NOT NULL AUTO_INCREMENT,
-  `email` varchar(50) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `mpassword` varchar(64) NOT NULL,
   `member_name` varchar(20) NOT NULL,
   `member_nick_name` varchar(20) DEFAULT NULL,
@@ -259,7 +259,7 @@ CREATE TABLE `member_info` (
   `member_token` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`member_no`),
   UNIQUE KEY `unique_token` (`member_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,7 +268,7 @@ CREATE TABLE `member_info` (
 
 LOCK TABLES `member_info` WRITE;
 /*!40000 ALTER TABLE `member_info` DISABLE KEYS */;
-INSERT INTO `member_info` VALUES (1,'john.doe@example.com','hashedpassword1','John Doe','Johnny','http://example.com/pic1.jpg','0912345678','Love to travel and explore new places.',10,4,5,3,'2024-12-29 10:30:00',1,'token1'),(2,'jane.smith@example.com','hashedpassword2','Jane Smith','Janey','http://example.com/pic2.jpg','0923456789','A passionate cook and a bookworm.',20,5,10,4,'2024-12-28 09:20:00',1,'token2'),(3,'alex.jones@example.com','hashedpassword3','Alex Jones','Alex','http://example.com/pic3.jpg','0934567890','Enthusiast in tech and gadgets.',15,3,8,2,'2024-12-27 11:45:00',1,'token3'),(4,'mary.johnson@example.com','hashedpassword4','Mary Johnson','Mary','http://example.com/pic4.jpg','0945678901','Lover of pets and nature walks.',12,4,9,4,'2024-12-26 14:00:00',1,'token4'),(5,'peter.brown@example.com','hashedpassword5','Peter Brown','Pete','http://example.com/pic5.jpg','0956789012','Avid photographer and traveler.',18,5,7,4,'2024-12-25 16:10:00',1,'token5'),(6,'1234@gmail.com','12345678','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2024-12-30 23:47:55',1,NULL),(7,'12345678@gmail.com','12345678','Mary',NULL,NULL,NULL,NULL,0,0,0,0,'2024-12-30 23:53:50',1,NULL),(8,'1234567890@gmail.com','12345678','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-01 15:06:08',1,NULL),(9,'93812846@gmail.com','12345678','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-01 17:03:50',1,NULL),(10,'222@gmail.com','1234567890','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-02 18:14:36',1,NULL),(11,'22233@gmail.com','1234567890','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-02 18:50:18',1,NULL),(12,'2223344@gmail.com','1234567890','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-02 21:49:24',1,NULL),(13,'test@example.com','12345678','John Doe',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 00:01:04',1,NULL),(14,'111111@gmail.com','11111111','eee',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 14:04:09',1,NULL),(15,'1209@gmail.com.tw','11111111','brbr',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 14:08:37',1,NULL);
+INSERT INTO `member_info` VALUES (1,'john.doe@example.com','hashedpassword1','John Doe','Johnny','http://example.com/pic1.jpg','0912345678','Love to travel and explore new places.',10,4,5,3,'2024-12-29 10:30:00',1,'token1'),(2,'jane.smith@example.com','hashedpassword2','Jane Smith','Janey','http://example.com/pic2.jpg','0923456789','A passionate cook and a bookworm.',20,5,10,4,'2024-12-28 09:20:00',1,'token2'),(3,'alex.jones@example.com','hashedpassword3','Alex Jones','Alex','http://example.com/pic3.jpg','0934567890','Enthusiast in tech and gadgets.',15,3,8,2,'2024-12-27 11:45:00',1,'token3'),(4,'mary.johnson@example.com','hashedpassword4','Mary Johnson','Mary','http://example.com/pic4.jpg','0945678901','Lover of pets and nature walks.',12,4,9,4,'2024-12-26 14:00:00',1,'token4'),(5,'peter.brown@example.com','hashedpassword5','Peter Brown','Pete','http://example.com/pic5.jpg','0956789012','Avid photographer and traveler.',18,5,7,4,'2024-12-25 16:10:00',1,'token5'),(6,'1234@gmail.com','12345678','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2024-12-30 23:47:55',1,NULL),(7,'12345678@gmail.com','12345678','Mary',NULL,NULL,NULL,NULL,0,0,0,0,'2024-12-30 23:53:50',1,NULL),(8,'1234567890@gmail.com','12345678','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-01 15:06:08',1,NULL),(9,'93812846@gmail.com','12345678','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-01 17:03:50',1,NULL),(10,'222@gmail.com','1234567890','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-02 18:14:36',1,NULL),(11,'22233@gmail.com','1234567890','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-02 18:50:18',1,NULL),(12,'2223344@gmail.com','1234567890','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-02 21:49:24',1,NULL),(13,'test@example.com','12345678','John Doe',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 00:01:04',1,NULL),(14,'111111@gmail.com','11111111','eee',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 14:04:09',1,NULL),(15,'1209@gmail.com.tw','11111111','brbr',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 14:08:37',1,NULL),(16,'aaa0103@gmail.com','11111111','www',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 16:43:01',1,NULL),(17,'ggg@example.com','22222222','ff',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 16:45:58',1,NULL),(18,'qwe@gmail.com','22222222','rio',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 17:23:47',1,NULL),(19,'0104Test@example.com','11111111','rrr',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:08:58',1,NULL),(20,'0104@example.com','11111111','0104Test',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:12:18',1,NULL),(21,'22222@gmail.com','11111111','ro',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:27:08',1,NULL),(22,'oo11@gmail.com','11111111','oo',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:37:13',1,NULL),(23,'wee@example.com','11111111','tttt',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:40:57',1,NULL),(24,'qqq@example.com','11111111','rfe',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:42:11',1,NULL),(25,'qwerty@gmail.com','11111111','ewr',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 14:05:16',1,NULL),(26,'23@example.com','11111111','yuuirgrew',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 14:15:28',1,NULL);
 /*!40000 ALTER TABLE `member_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -351,7 +351,7 @@ DROP TABLE IF EXISTS `order_list`;
 CREATE TABLE `order_list` (
   `order_id` int NOT NULL AUTO_INCREMENT,
   `service_idno` int DEFAULT NULL,
-  `order_person` int NOT NULL,
+  `order_person` int DEFAULT NULL,
   `customer_rate` int DEFAULT NULL,
   `customer_rate_content` varchar(50) DEFAULT NULL,
   `companion_rate` int DEFAULT NULL,
@@ -362,8 +362,8 @@ CREATE TABLE `order_list` (
   `order_title` varchar(30) NOT NULL,
   PRIMARY KEY (`order_id`),
   KEY `service_idno` (`service_idno`),
-  KEY `order_person` (`order_person`),
   KEY `order_poster` (`order_poster`),
+  KEY `order_list_ibfk_2` (`order_person`),
   CONSTRAINT `order_list_ibfk_1` FOREIGN KEY (`service_idno`) REFERENCES `service` (`service_id`),
   CONSTRAINT `order_list_ibfk_2` FOREIGN KEY (`order_person`) REFERENCES `member_info` (`member_no`),
   CONSTRAINT `order_list_ibfk_3` FOREIGN KEY (`order_poster`) REFERENCES `member_info` (`member_no`)
@@ -376,7 +376,7 @@ CREATE TABLE `order_list` (
 
 LOCK TABLES `order_list` WRITE;
 /*!40000 ALTER TABLE `order_list` DISABLE KEYS */;
-INSERT INTO `order_list` VALUES (1,1,2,5,'Excellent service, very happy with the design.',4,'Great photography.',1500,0,1,''),(2,2,3,4,'Good photography but could improve lighting.',5,'Great job on the event shoot!',700,1,2,''),(3,3,4,3,'Service was okay, not as expected.',4,'Good gardening work.',500,2,3,''),(4,4,5,5,'Delicious food, will book again.',5,'Food was amazing!',900,3,4,''),(5,5,1,5,'Loved the logo design, very creative!',5,'Perfect branding work.',1200,1,5,'');
+INSERT INTO `order_list` VALUES (1,1,2,5,'Excellent service, very happy with the design.',4,'Great photography.',1500,0,1,'Dinner together'),(2,2,3,4,'Good photography but could improve lighting.',5,'Great job on the event shoot!',700,1,2,'Dinner together'),(3,3,4,3,'Service was okay, not as expected.',4,'Good gardening work.',500,2,3,'python'),(4,4,5,5,'Delicious food, will book again.',5,'Food was amazing!',900,3,4,'SOGO shopping'),(5,5,1,5,'Loved the logo design, very creative!',5,'Perfect branding work.',1200,1,5,'Play Badminton');
 /*!40000 ALTER TABLE `order_list` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -478,4 +478,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-03 14:40:30
+-- Dump completed on 2025-01-04 15:10:13
