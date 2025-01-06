@@ -142,7 +142,7 @@ CREATE TABLE `chat_room` (
   KEY `room_user_two` (`room_user_two`),
   CONSTRAINT `chat_room_ibfk_1` FOREIGN KEY (`room_user_one`) REFERENCES `member_info` (`member_no`),
   CONSTRAINT `chat_room_ibfk_2` FOREIGN KEY (`room_user_two`) REFERENCES `member_info` (`member_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,7 +151,7 @@ CREATE TABLE `chat_room` (
 
 LOCK TABLES `chat_room` WRITE;
 /*!40000 ALTER TABLE `chat_room` DISABLE KEYS */;
-INSERT INTO `chat_room` VALUES (1,1,2),(2,2,3),(3,3,4),(4,4,5),(5,5,1);
+INSERT INTO `chat_room` VALUES (1,1,2),(2,2,3),(3,3,4),(4,4,5),(5,5,1),(6,1,3);
 /*!40000 ALTER TABLE `chat_room` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -259,7 +259,7 @@ CREATE TABLE `member_info` (
   `member_token` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`member_no`),
   UNIQUE KEY `unique_token` (`member_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,7 +268,7 @@ CREATE TABLE `member_info` (
 
 LOCK TABLES `member_info` WRITE;
 /*!40000 ALTER TABLE `member_info` DISABLE KEYS */;
-INSERT INTO `member_info` VALUES (1,'john.doe@example.com','hashedpassword1','John Doe','Johnny','http://example.com/pic1.jpg','0912345678','Love to travel and explore new places.',10,4,5,3,'2024-12-29 10:30:00',1,'token1'),(2,'jane.smith@example.com','hashedpassword2','Jane Smith','Janey','http://example.com/pic2.jpg','0923456789','A passionate cook and a bookworm.',20,5,10,4,'2024-12-28 09:20:00',1,'token2'),(3,'alex.jones@example.com','hashedpassword3','Alex Jones','Alex','http://example.com/pic3.jpg','0934567890','Enthusiast in tech and gadgets.',15,3,8,2,'2024-12-27 11:45:00',1,'token3'),(4,'mary.johnson@example.com','hashedpassword4','Mary Johnson','Mary','http://example.com/pic4.jpg','0945678901','Lover of pets and nature walks.',12,4,9,4,'2024-12-26 14:00:00',1,'token4'),(5,'peter.brown@example.com','hashedpassword5','Peter Brown','Pete','http://example.com/pic5.jpg','0956789012','Avid photographer and traveler.',18,5,7,4,'2024-12-25 16:10:00',1,'token5'),(6,'1234@gmail.com','12345678','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2024-12-30 23:47:55',1,NULL),(7,'12345678@gmail.com','12345678','Mary',NULL,NULL,NULL,NULL,0,0,0,0,'2024-12-30 23:53:50',1,NULL),(8,'1234567890@gmail.com','12345678','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-01 15:06:08',1,NULL),(9,'93812846@gmail.com','12345678','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-01 17:03:50',1,NULL),(10,'222@gmail.com','1234567890','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-02 18:14:36',1,NULL),(11,'22233@gmail.com','1234567890','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-02 18:50:18',1,NULL),(12,'2223344@gmail.com','1234567890','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-02 21:49:24',1,NULL),(13,'test@example.com','12345678','John Doe',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 00:01:04',1,NULL),(14,'111111@gmail.com','11111111','eee',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 14:04:09',1,NULL),(15,'1209@gmail.com.tw','11111111','brbr',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 14:08:37',1,NULL),(16,'aaa0103@gmail.com','11111111','www',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 16:43:01',1,NULL),(17,'ggg@example.com','22222222','ff',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 16:45:58',1,NULL),(18,'qwe@gmail.com','22222222','rio',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 17:23:47',1,NULL),(19,'0104Test@example.com','11111111','rrr',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:08:58',1,NULL),(20,'0104@example.com','11111111','0104Test',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:12:18',1,NULL),(21,'22222@gmail.com','11111111','ro',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:27:08',1,NULL),(22,'oo11@gmail.com','11111111','oo',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:37:13',1,NULL),(23,'wee@example.com','11111111','tttt',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:40:57',1,NULL),(24,'qqq@example.com','11111111','rfe',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:42:11',1,NULL),(25,'qwerty@gmail.com','11111111','ewr',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 14:05:16',1,NULL),(26,'23@example.com','11111111','yuuirgrew',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 14:15:28',1,NULL);
+INSERT INTO `member_info` VALUES (1,'john.doe@example.com','hashedpassword1','John Doe','Johnny','http://example.com/pic1.jpg','0912345678','Love to travel and explore new places.',10,4,5,3,'2024-12-29 10:30:00',1,'token1'),(2,'jane.smith@example.com','hashedpassword2','Jane Smith','Janey','http://example.com/pic2.jpg','0923456789','A passionate cook and a bookworm.',20,5,10,4,'2024-12-28 09:20:00',1,'token2'),(3,'alex.jones@example.com','hashedpassword3','Alex Jones','Alex','http://example.com/pic3.jpg','0934567890','Enthusiast in tech and gadgets.',15,3,8,2,'2024-12-27 11:45:00',1,'token3'),(4,'mary.johnson@example.com','hashedpassword4','Mary Johnson','Mary','http://example.com/pic4.jpg','0945678901','Lover of pets and nature walks.',12,4,9,4,'2024-12-26 14:00:00',1,'token4'),(5,'peter.brown@example.com','hashedpassword5','Peter Brown','Pete','http://example.com/pic5.jpg','0956789012','Avid photographer and traveler.',18,5,7,4,'2024-12-25 16:10:00',1,'token5'),(6,'1234@gmail.com','12345678','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2024-12-30 23:47:55',1,NULL),(7,'12345678@gmail.com','12345678','Mary',NULL,NULL,NULL,NULL,0,0,0,0,'2024-12-30 23:53:50',1,NULL),(8,'1234567890@gmail.com','12345678','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-01 15:06:08',1,NULL),(9,'93812846@gmail.com','12345678','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-01 17:03:50',1,NULL),(10,'222@gmail.com','1234567890','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-02 18:14:36',1,NULL),(11,'22233@gmail.com','1234567890','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-02 18:50:18',1,NULL),(12,'2223344@gmail.com','1234567890','Miu',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-02 21:49:24',1,NULL),(13,'test@example.com','12345678','John Doe',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 00:01:04',1,NULL),(14,'111111@gmail.com','11111111','eee',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 14:04:09',1,NULL),(15,'1209@gmail.com.tw','11111111','brbr',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 14:08:37',1,NULL),(16,'aaa0103@gmail.com','11111111','www',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 16:43:01',1,NULL),(17,'ggg@example.com','22222222','ff',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 16:45:58',1,NULL),(18,'qwe@gmail.com','22222222','rio',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-03 17:23:47',1,NULL),(19,'0104Test@example.com','11111111','rrr',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:08:58',1,NULL),(20,'0104@example.com','11111111','0104Test',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:12:18',1,NULL),(21,'22222@gmail.com','11111111','ro',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:27:08',1,NULL),(22,'oo11@gmail.com','11111111','oo',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:37:13',1,NULL),(23,'wee@example.com','11111111','tttt',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:40:57',1,NULL),(24,'qqq@example.com','11111111','rfe',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 13:42:11',1,NULL),(25,'qwerty@gmail.com','11111111','ewr',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 14:05:16',1,NULL),(26,'23@example.com','11111111','yuuirgrew',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 14:15:28',1,NULL),(27,'222232@gmail.com','33333333','tgb',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-04 15:22:00',1,NULL),(28,'john.wu@example.com','11111111','ee',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-05 02:17:32',1,NULL),(29,'uio@example.com','11111111','rio',NULL,NULL,NULL,NULL,0,0,0,0,'2025-01-05 13:50:37',1,NULL);
 /*!40000 ALTER TABLE `member_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -299,7 +299,7 @@ CREATE TABLE `messages` (
   CONSTRAINT `messages_ibfk_3` FOREIGN KEY (`receiver_id`) REFERENCES `member_info` (`member_no`),
   CONSTRAINT `messages_ibfk_4` FOREIGN KEY (`sender_token`) REFERENCES `member_info` (`member_token`),
   CONSTRAINT `messages_ibfk_5` FOREIGN KEY (`receiver_token`) REFERENCES `member_info` (`member_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -308,7 +308,7 @@ CREATE TABLE `messages` (
 
 LOCK TABLES `messages` WRITE;
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
-INSERT INTO `messages` VALUES (1,1,1,'Hello, I have a question about your service.','2024-12-29 10:10:00',2,'token1','token2'),(2,2,2,'I am interested in your photography service.','2024-12-28 12:15:00',3,'token2','token3'),(3,3,3,'Can you please send me more details about your gardening service?','2024-12-27 14:35:00',4,'token3','token4'),(4,4,4,'Looking forward to working with you!','2024-12-26 16:40:00',5,'token4','token5'),(5,5,5,'Thanks for the branding, it looks great!','2024-12-25 16:50:00',1,'token5','token1');
+INSERT INTO `messages` VALUES (1,1,1,'Hello, I have a question about your service.','2024-12-29 10:10:00',2,'token1','token2'),(2,2,2,'I am interested in your photography service.','2024-12-28 12:15:00',3,'token2','token3'),(3,3,3,'Can you please send me more details about your gardening service?','2024-12-27 14:35:00',4,'token3','token4'),(4,4,4,'Looking forward to working with you!','2024-12-26 16:40:00',5,'token4','token5'),(5,5,5,'Thanks for the branding, it looks great!','2024-12-25 16:50:00',1,'token5','token1'),(6,3,4,'OK!','2024-12-27 15:00:00',3,'token4','token3');
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -404,7 +404,7 @@ CREATE TABLE `service` (
   KEY `service_location` (`service_location`),
   CONSTRAINT `service_ibfk_1` FOREIGN KEY (`service_poster`) REFERENCES `member_info` (`member_no`),
   CONSTRAINT `service_ibfk_2` FOREIGN KEY (`service_location`) REFERENCES `service_area` (`area_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -413,7 +413,7 @@ CREATE TABLE `service` (
 
 LOCK TABLES `service` WRITE;
 /*!40000 ALTER TABLE `service` DISABLE KEYS */;
-INSERT INTO `service` VALUES (1,1,'Website Design','Complete website development and design.','http://example.com/service1.jpg','2024-12-30 09:00:00','2024-12-30 18:00:00',1000,1,'A001',0),(2,2,'Photography','Professional photography for events.','http://example.com/service2.jpg','2024-12-29 10:00:00','2024-12-29 15:00:00',500,1,'A002',0),(3,3,'Gardening','Landscape gardening and design services.','http://example.com/service3.jpg','2024-12-28 11:00:00','2024-12-28 16:00:00',300,1,'A003',0),(4,4,'Cooking','Catering for events and private dinners.','http://example.com/service4.jpg','2024-12-27 12:00:00','2024-12-27 17:00:00',700,1,'A004',0),(5,5,'Graphic Design','Custom logo and branding designs.','http://example.com/service5.jpg','2024-12-26 13:00:00','2024-12-26 18:00:00',1200,1,'A005',0);
+INSERT INTO `service` VALUES (1,1,'Website Design','Complete website development and design.','http://example.com/service1.jpg','2024-12-30 09:00:00','2024-12-30 18:00:00',1000,1,'A001',0),(2,2,'Photography','Professional photography for events.','http://example.com/service2.jpg','2024-12-29 10:00:00','2024-12-29 15:00:00',500,1,'A002',0),(3,3,'Gardening','Landscape gardening and design services.','http://example.com/service3.jpg','2024-12-28 11:00:00','2024-12-28 16:00:00',300,1,'A003',0),(4,4,'Cooking','Catering for events and private dinners.','http://example.com/service4.jpg','2024-12-27 12:00:00','2024-12-27 17:00:00',700,1,'A004',0),(5,5,'Graphic Design','Custom logo and branding designs.','http://example.com/service5.jpg','2024-12-26 13:00:00','2024-12-26 18:00:00',1200,1,'A005',0),(11,1,'Cleaning','Full house cleaning service','http://example.com/cleaning.jpg','2025-01-05 08:00:00','2025-01-05 10:00:00',50,1,'A001',1),(12,2,'Plumbing','Fix leaking pipes and taps','http://example.com/plumbing.jpg','2025-01-06 09:00:00','2025-01-06 12:00:00',75,1,'A002',1),(13,3,'Electrical','Install new light fixtures','http://example.com/electrical.jpg','2025-01-07 10:00:00','2025-01-07 13:00:00',100,1,'A003',1),(14,4,'Gardening','Garden maintenance and landscaping','http://example.com/gardening.jpg','2025-01-08 07:00:00','2025-01-08 11:00:00',60,1,'A004',1),(15,5,'Carpet Cleaning','Deep cleaning of carpets','http://example.com/carpet_cleaning.jpg','2025-01-09 08:00:00','2025-01-09 10:30:00',40,1,'A005',1),(16,1,'Cleaning','Full house cleaning service','http://example.com/cleaning.jpg','2025-01-05 08:00:00','2025-01-05 10:00:00',50,1,'A001',1),(17,2,'Plumbing','Fix leaking pipes and taps','http://example.com/plumbing.jpg','2025-01-06 09:00:00','2025-01-06 12:00:00',75,1,'A002',1),(18,3,'Electrical','Install new light fixtures','http://example.com/electrical.jpg','2025-01-07 10:00:00','2025-01-07 13:00:00',100,1,'A003',1),(19,4,'Gardening','Garden maintenance and landscaping','http://example.com/gardening.jpg','2025-01-08 07:00:00','2025-01-08 11:00:00',60,1,'A004',1),(20,5,'Carpet Cleaning','Deep cleaning of carpets','http://example.com/carpet_cleaning.jpg','2025-01-09 08:00:00','2025-01-09 10:30:00',40,1,'A005',1);
 /*!40000 ALTER TABLE `service` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -478,4 +478,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-04 15:10:13
+-- Dump completed on 2025-01-06 18:11:25
